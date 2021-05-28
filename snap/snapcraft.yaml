@@ -7,6 +7,8 @@ description: |
 base: core18
 grade: stable
 confinement: strict
+architectures:
+  - build-on: [amd64, i386, arm64]
 
 apps:
   d:
