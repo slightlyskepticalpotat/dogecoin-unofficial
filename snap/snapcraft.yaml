@@ -37,15 +37,22 @@ parts:
       wget https://github.com/dogecoin/dogecoin/releases/download/v${SNAPCRAFT_PROJECT_VERSION}/dogecoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
       wget https://github.com/dogecoin/gitian.sigs/archive/refs/heads/master.zip
       unzip master.zip
-      echo "Verifying signatures..."
+      echo "Verifying secure hash matches signed values..."
       checksum=$(sha256sum dogecoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz)
-      if ! grep -r $checksum *; then
-        echo "Signature not verified."
+      if ! (grep -r $checksum * | grep dogecoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz); then
+        echo "Secure hash not verified."
         return
+      else
+        echo "Secure hash verified."
       fi
       tar -xvf dogecoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
       echo "Running tests..."
-      dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/test_dogecoin
+      if ! (dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/test_dogecoin); then
+        echo "Dogecoin tests failed."
+        return
+      else
+        echo "Dogecoin tests passed."
+      fi
       echo "Installing Dogecoin..."
       install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/dogecoind
       install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/dogecoin-qt
