@@ -2,7 +2,14 @@ All the commands I used for building and pushing to Snapcraft. I've only tested 
 
 ---
 
+## Installing From Snap Store
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/dogecoin-unofficial)
+
+[![dogecoin-unofficial](https://snapcraft.io/dogecoin-unofficial/badge.svg)](https://snapcraft.io/dogecoin-unofficial)
+
 ## Building Locally
+
 ```
 sudo apt install snapd
 sudo snap install --classic snapcraft
