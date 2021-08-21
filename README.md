@@ -19,5 +19,5 @@ snap install \*.snap --devmode
 snapcraft login
 snapcraft register dogecoin-unofficial
 snapcraft push \*.snap --release=edge
-    sudo snap install dogecoin-unofficial --channel=edge
+sudo snap install dogecoin-unofficial --channel=edge
 ```
