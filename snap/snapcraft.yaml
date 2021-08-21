@@ -1,5 +1,5 @@
 name: dogecoin-unofficial # you probably want to 'snapcraft register <name>'
-version: '1.14.3'
+version: '1.14.4'
 summary: Reference client of Dogecoin, a peer-to-peer digital currency like Bitcoin.
 description: |
   Dogecoin is a cryptocurrency like Bitcoin, although it does not use SHA256 as its proof of work (POW). Taking development cues from Tenebrix and Litecoin, Dogecoin currently employs a simplified variant of scrypt. MIT licenced.
@@ -50,8 +50,8 @@ parts:
       install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/dogecoind
       install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/dogecoin-qt
       install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/dogecoin-cli
-      wget https://raw.githubusercontent.com/dogecoin/dogecoin/v${SNAPCRAFT_PROJECT_VERSION}/share/pixmaps/bitcoin128.png
-      install -m 0644 -D -t $SNAPCRAFT_PART_INSTALL/share/pixmaps bitcoin128.png
+      wget https://raw.githubusercontent.com/dogecoin/dogecoin/master/share/pixmaps/dogecoin128.png
+      install -m 0644 -D -t $SNAPCRAFT_PART_INSTALL/share/pixmaps dogecoin128.png
     build-packages:
       - unzip
       - wget
