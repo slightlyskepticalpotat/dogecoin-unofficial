@@ -1,4 +1,4 @@
-Here are all the commands I use for building and pushing to Snapcraft. I've only tested the amd64 (x86_64) and arm64 (aarch64) .snap packages, but anyone on amd64 (x86_64), arm64 (aarch64), or i686 (i386) should be able to build and install the snap themselves with these instructions.
+Here are all the commands I use for building and pushing to Snapcraft. I've only tested the amd64 (x86_64) and arm64 (aarch64) .snap packages, but anyone on amd64 (x86_64), arm64 (aarch64), or i686 (i386) should be able to build and install the snap themselves with these instructions. Installing the latest version from the Snap Store (see below) is recommended, but .snap files are also provided for other recent releases.
 
 ---
 
