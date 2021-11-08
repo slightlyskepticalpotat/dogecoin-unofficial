@@ -1,8 +1,8 @@
 name: dogecoin-unofficial # you probably want to 'snapcraft register <name>'
-version: '1.14.0'
-summary: Reference client of Dogecoin, a peer-to-peer digital currency like Bitcoin.
+version: '1.14.5'
+summary: Reference client of Dogecoin, a peer-to-peer digital currency similar to Bitcoin.
 description: |
-  Dogecoin is a cryptocurrency like Bitcoin, although it does not use SHA256 as its proof of work (POW). Taking development cues from Tenebrix and Litecoin, Dogecoin currently employs a simplified variant of scrypt. MIT licenced.
+  Dogecoin is a community-driven cryptocurrency that was inspired by a Shiba Inu meme. The Dogecoin Core software allows anyone to operate a node in the Dogecoin blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Bitcoin Core and other cryptocurrencies.
 
 base: core18
 grade: stable
@@ -60,6 +60,7 @@ parts:
       echo "Running tests..."
       if ! (dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/test_dogecoin); then
         echo "Dogecoin tests failed."
+        return
       else
         echo "Dogecoin tests passed."
       fi
@@ -83,6 +84,7 @@ parts:
       - libx11-xcb1
       - libx11-6
       - libfontconfig
+      - libxkbcommon-x11-0
   qt4conf:
     build-packages:
       - dpkg-dev
