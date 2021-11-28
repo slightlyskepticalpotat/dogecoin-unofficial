@@ -1,4 +1,4 @@
-Here are all the commands I use for building and pushing to Snapcraft. I've only tested the amd64 (x86_64) and arm64 (aarch64) .snap packages, but anyone on amd64 (x86_64), arm64 (aarch64), or i686 (i386) should be able to build and install the snap themselves with these instructions. Installing the latest version from the Snap Store (see below) is recommended, but .snap files are also provided for other recent releases.
+Here are all the commands for building and uploading to the Snap Store. Snapcraft's CI system builds and tests .snap packages on amd64 (x86_64), arm64 (aarch64), and i386 (i686), so users on those architectures can install the latest version from the Snap Store (see below). That is the recommended way to install dogecoin-unofficial. Users can also manually build and install dogecoin-unofficial with the commands below, or download and install one of the older .snap packages from this repository.
 
 ---
 
@@ -21,11 +21,11 @@ snapcraft
 snap install \*.snap --devmode
 ```
 
-### To Push to Snapcraft
+### To Upload to the Snap Store
 ```
 snapcraft login
 snapcraft register dogecoin-unofficial
-snapcraft push \*.snap
+snapcraft upload \*.snap
 sudo snap install dogecoin-unofficial
 ```
 
