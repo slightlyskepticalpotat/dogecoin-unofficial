@@ -1,1 +1,2 @@
 snap/snapcraft.yaml linguist-language=bash
+dogecoin-unofficial_1.14.6_amd64.snap filter=lfs diff=lfs merge=lfs -text
