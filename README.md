@@ -1,4 +1,4 @@
-Here are the commands for building and uploading a Dogecoin Core Snap to the Snap Store. Snapcraft's CI system builds and tests .snap packages on amd64 (x86_64), arm64 (aarch64), and i386 (i686), so users on those architectures can install the latest version from the Snap Store. That is the recommended way to install dogecoin-unofficial. Users can also manually build and install dogecoin-unofficial or download and install one of the older .snap packages from this repository.
+Here are the commands for building and uploading a Dogecoin Core Snap to the Snap Store. Snapcraft's CI system builds and tests .snap packages on amd64 (x86_64), arm64 (aarch64), and i386 (i686), so users on those architectures can install the latest version from the Snap Store. That is the recommended way to install dogecoin-unofficial. Users can also manually build and install dogecoin-unofficial or download and install one of the older .snap packages from this repository. From 1.14.6 on, the .snap files are stored using [git-lfs](https://git-lfs.github.com/).
 
 ---
 
