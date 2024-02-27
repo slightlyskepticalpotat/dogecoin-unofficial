@@ -1,4 +1,6 @@
-Here are the commands for building and uploading a Dogecoin Core Snap to the Snap Store. Snapcraft's CI system builds and tests .snap packages on amd64 (x86_64), arm64 (aarch64), and i386 (i686), so users on those architectures can install the latest version from the Snap Store. That is the recommended way to install dogecoin-unofficial. Users can also manually build and install dogecoin-unofficial or download and install one of the older .snap packages from this repository. From 1.14.6 on, the .snap files are stored using [git-lfs](https://git-lfs.github.com/).
+# dogecoin-unofficial
+
+Here are the commands for building and uploading a Dogecoin Core Snap to the Snap Store. Snapcraft's CI system builds and tests .snap packages on amd64 (x86_64), arm64 (aarch64), and i386 (i686), so users on those architectures can install the latest version from the Snap Store. That is the recommended way to install dogecoin-unofficial. Users can also manually build and install dogecoin-unofficial or download and install one of the older .snap packages from this repository. Due to GitHub's file sizing constraints, .snap files are stored using [git-lfs](https://git-lfs.github.com/).
 
 ---
 
@@ -39,8 +41,14 @@ dogecoin-unofficial.test # for test_dogecoin
 dogecoin-unofficial.tx # for dogecoin-tx
 ```
 
+## Updating
+```
+sudo snap refresh dogecoin-unofficial
+```
+Unless disabled, automatic updates take place whenever there is a new stable release.
+
 ## Uninstalling
 ```
 sudo snap remove dogecoin-unofficial
 ```
-To remove user data, add `--purge`.
+To remove all user data, add `--purge`. Be careful, as this will delete your `wallet.dat` file.

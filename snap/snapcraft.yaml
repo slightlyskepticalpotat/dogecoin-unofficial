@@ -1,6 +1,6 @@
 name: dogecoin-unofficial
 # Running 'snapcraft register <name>' is advised
-version: '1.14.6'
+version: '1.14.7'
 summary: Reference client of Dogecoin, a peer-to-peer digital currency like Bitcoin.
 description: |
   Dogecoin is a community-driven cryptocurrency that was inspired by a Shiba Inu meme. The Dogecoin Core software allows anyone to operate a node in the Dogecoin blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Bitcoin Core and other cryptocurrencies.
@@ -48,7 +48,7 @@ apps:
 
 parts:
   desktop-qt5:
-    # So desktop-launch from qt5 is udsable
+    # So desktop-launch from qt5 is usable
     # Adapted from https://github.com/ubuntu/snapcraft-desktop-helpers/blob/master/snapcraft.yaml
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
     source-depth: 1
