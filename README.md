@@ -15,7 +15,7 @@ sudo snap install dogecoin-unofficial
 ```
 sudo apt install snapd
 sudo snap install --classic snapcraft
-sudo snapcraft
+snapcraft
 ```
 
 ### Installing Locally
