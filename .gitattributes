@@ -6,3 +6,4 @@ dogecoin-unofficial_1.14.3_amd64.snap filter=lfs diff=lfs merge=lfs -text
 dogecoin-unofficial_1.14.4_amd64.snap filter=lfs diff=lfs merge=lfs -text
 dogecoin-unofficial_1.14.5_amd64.snap filter=lfs diff=lfs merge=lfs -text
 dogecoin-unofficial_1.14.7_amd64.snap filter=lfs diff=lfs merge=lfs -text
+dogecoin-unofficial_1.14.8_amd64.snap filter=lfs diff=lfs merge=lfs -text

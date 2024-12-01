@@ -1,6 +1,6 @@
 name: dogecoin-unofficial
 # Running 'snapcraft register <name>' is advised
-version: '1.14.7'
+version: '1.14.8'
 summary: Reference client of Dogecoin, a peer-to-peer digital currency like Bitcoin.
 description: |
   Dogecoin is a community-driven cryptocurrency that was inspired by a Shiba Inu meme. The Dogecoin Core software allows anyone to operate a node in the Dogecoin blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Bitcoin Core and other cryptocurrencies.
@@ -14,8 +14,6 @@ architectures:
     build-for: amd64
   - build-on: arm64
     build-for: arm64
-  - build-on: i386
-    build-for: i386
 
 apps:
   d:
@@ -81,10 +79,10 @@ parts:
     override-build: |
       echo "This script is viewable at https://github.com/slightlyskepticalpotat/dogecoin-unofficial"
       echo "Downloading files..."
-      if [ "$CRAFT_ARCH_TRIPLET" = "i386-linux-gnu" ]; then # snap designates 32-bit as i386, but dogecoin designates it as i686
+      if [ "$CRAFT_ARCH_TRIPLET_BUILD_FOR" = "i386-linux-gnu" ]; then # snap designates 32-bit as i386, but dogecoin designates it as i686
         BUILD_ARCH_TRIPLET=i686-pc-linux-gnu
       else
-        BUILD_ARCH_TRIPLET=$CRAFT_ARCH_TRIPLET
+        BUILD_ARCH_TRIPLET=$CRAFT_ARCH_TRIPLET_BUILD_FOR
       fi
       wget https://github.com/dogecoin/dogecoin/releases/download/v${SNAPCRAFT_PROJECT_VERSION}/dogecoin-${SNAPCRAFT_PROJECT_VERSION}-${BUILD_ARCH_TRIPLET}.tar.gz
       wget https://github.com/dogecoin/gitian.sigs/archive/refs/heads/master.tar.gz
