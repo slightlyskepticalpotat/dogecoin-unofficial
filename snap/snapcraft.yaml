@@ -1,19 +1,15 @@
 name: dogecoin-unofficial
-# Running 'snapcraft register <name>' is advised
-version: '1.14.8'
+version: '1.14.9'
 summary: Reference client of Dogecoin, a peer-to-peer digital currency like Bitcoin.
 description: |
   Dogecoin is a community-driven cryptocurrency that was inspired by a Shiba Inu meme. The Dogecoin Core software allows anyone to operate a node in the Dogecoin blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Bitcoin Core and other cryptocurrencies.
 
 grade: stable
 confinement: strict
-base: core22 # should work with core18 and core20 with changes
-compression: lzo
-architectures:
-  - build-on: amd64
-    build-for: amd64
-  - build-on: arm64
-    build-for: arm64
+base: core24 # should work with core20 and core22 with changes
+platforms:
+  amd64:
+  arm64:
 
 apps:
   d:
@@ -60,19 +56,9 @@ parts:
       - qtbase5-dev
       - dpkg-dev
     stage-packages:
-      - libxkbcommon0
-      - fonts-ubuntu
-      - dmz-cursor-theme
-      - light-themes
-      - adwaita-icon-theme
-      - gnome-themes-standard
-      - shared-mime-info
       - libqt5gui5
       - libqt5svg5 # for loading icon themes which are svg
       - libgtk2.0-0
-      - locales-all
-      - xdg-user-dirs
-      - fcitx-frontend-qt5
 
   dogecoin-unofficial:
     plugin: nil
@@ -105,8 +91,7 @@ parts:
       fi
       wget https://raw.githubusercontent.com/dogecoin/dogecoin/v${SNAPCRAFT_PROJECT_VERSION}/doc/release-notes.md
       cat release-notes.md
-      echo "Installing Dogecoin Core..."
-      echo "Version ${SNAPCRAFT_PROJECT_VERSION}"
+      echo "Installing Dogecoin Core ${SNAPCRAFT_PROJECT_VERSION}"
       install -m 0755 -D -t ${CRAFT_PART_INSTALL}/bin dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/dogecoind
       if ! ([ "$BUILD_ARCH_TRIPLET" = "aarch64-linux-gnu" ]); then # there is no official dogecoin-qt build on arm64
         install -m 0755 -D -t ${CRAFT_PART_INSTALL}/bin dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/dogecoin-qt
