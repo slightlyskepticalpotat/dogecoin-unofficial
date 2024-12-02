@@ -3,7 +3,6 @@ version: '1.14.9'
 summary: Reference client of Dogecoin, a peer-to-peer digital currency like Bitcoin.
 description: |
   Dogecoin is a community-driven cryptocurrency that was inspired by a Shiba Inu meme. The Dogecoin Core software allows anyone to operate a node in the Dogecoin blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Bitcoin Core and other cryptocurrencies.
-
 grade: stable
 confinement: strict
 base: core24 # should work with core20 and core22 with changes
@@ -58,7 +57,6 @@ parts:
     stage-packages:
       - libqt5gui5
       - libqt5svg5 # for loading icon themes which are svg
-      - libgtk2.0-0
 
   dogecoin-unofficial:
     plugin: nil
