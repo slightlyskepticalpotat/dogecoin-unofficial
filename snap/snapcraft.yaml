@@ -5,7 +5,7 @@ description: |
   Dogecoin is a community-driven cryptocurrency that was inspired by a Shiba Inu meme. The Dogecoin Core software allows anyone to operate a node in the Dogecoin blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Bitcoin Core and other cryptocurrencies.
 grade: stable
 confinement: strict
-base: core24 # should work with core20 and core22 with changes
+base: core24 # should work with core20 and core22
 platforms:
   amd64:
   arm64:
